@@ -1,5 +1,29 @@
 package part2;
 
-public class KitabView {
 
+import java.util.Scanner;
+
+public class KitabView implements Observer{
+	Scanner scan; 
+	private Kitab kitab;
+
+public KitabView(Kitab kitab) {
+	this.scan = new Scanner(System.in);
+	this,kitab = kitab;
+}
+
+	public void printKitabInfo() {
+		System.out.println("Book: " + kitab.getTitle());
+		System.out.println("Price: Rs " + kitab.getPrice());
+		System.out.println("Weight: " + kitab.getWeight());
+	}
+
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+        System.out.println("\nBook details updated:");
+        printKitabInfo();
+		
+	}
 }
