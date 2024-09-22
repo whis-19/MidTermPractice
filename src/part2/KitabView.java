@@ -9,7 +9,7 @@ public class KitabView implements Observer{
 
 public KitabView(Kitab kitab) {
 	this.scan = new Scanner(System.in);
-	this,kitab = kitab;
+	this.kitab = kitab;
 }
 
 	public void printKitabInfo() {
@@ -18,6 +18,10 @@ public KitabView(Kitab kitab) {
 		System.out.println("Weight: " + kitab.getWeight());
 	}
 
+	public double editKitabInfo() {
+		System.out.print(" Update price: ");
+		return scan.nextDouble(); 
+	}
 
 	@Override
 	public void update() {
